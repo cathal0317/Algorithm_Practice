@@ -48,13 +48,22 @@
 def solution(N, A):
     # Implement your solution here
     count = [0] * N
+    base = 0
+    maxcount = 0
+
     for num in A:
-        if num <= N:
-            count[num-1] += 1
-        elif num == "0":
-            continue
+        idx = num -1 
+        if 1<= num < N:
+            if count[idx] < base:
+                count[idx] = base
+
+            count[idx] += 1
+            maxcount = max(maxcount, count[idx])
+
         else:
-            maxV = max(count)
-            count = [maxV] * N
-    
+            base = maxcount
+
+    for i in range(len(count)):
+        if count[i] < base:
+            count[i] = base
     return count
