@@ -40,14 +40,14 @@ def solution(A):
     for v in range(1,101):
         if cnt[v] == 0:
             continue
-        for s in range(1,total+1):
+        for s in range(total+1):
             if dp[s] >= 0:
                 dp[s] = cnt[v]
             elif s>=v and dp[s-v]>0:
                 dp[s] = dp[s-v] - 1
 
     result = total
-    for s in range(1,total//2 +1):
+    for s in range(0,total//2 +1):
         result = min(result,total-2*s)
 
     return result
