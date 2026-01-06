@@ -48,6 +48,7 @@ def solution(A):
 
     result = total
     for s in range(0,total//2 +1):
-        result = min(result,total-2*s)
+        if dp[s] >= 0: 
+            result = min(result,total-2*s)
 
     return result
