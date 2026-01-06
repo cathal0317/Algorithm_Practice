@@ -53,6 +53,6 @@ def solution(A):
         maxV = -10**18
         for j in range(1,7):
             if i-j>=0:
-                maxV = max(maxV, dp[1-j])
+                maxV = max(maxV, dp[i-j])
         dp[i] = maxV + A[i]
     return dp[-1]
