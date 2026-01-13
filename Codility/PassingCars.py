@@ -47,4 +47,6 @@ def solution(A):
             east += 1
         else:
             count += east
+            if pairs > 1_000_000_000:
+                return -1
     return count
