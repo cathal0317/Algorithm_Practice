@@ -1,10 +1,10 @@
-You are given the root of a binary tree root. Invert the binary tree and return its root.
+# You are given the root of a binary tree root. Invert the binary tree and return its root.
 
-Example 1:
+# Example 1:
 
-Input: root = [1,2,3,4,5,6,7]
+# Input: root = [1,2,3,4,5,6,7]
 
-Output: [1,3,2,7,6,5,4]
+# Output: [1,3,2,7,6,5,4]
 
 
 # Definition for a binary tree node.
@@ -31,3 +31,34 @@ class Solution:
             if new.right:
                 queue.append(new.right)
         return root
+
+
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return None
+        root.left, root.right = root.right, root.left
+
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+
+        return root
+
+
+
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return None
+        stack = [root]
+
+        while stack:
+            node = stack.pop()
+
+            node.left, node.right = node.right,node.left
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)
+        return root
+
