@@ -33,7 +33,8 @@ class Solution:
             adjacent(r-1,c,i+1) or
             adjacent(r,c+1,i+1) or
             adjacent(r,c-1,i+1))
-
+            path.remove((r,c))
+            
             return res
         for r in range(row):
             for c in range(column):
