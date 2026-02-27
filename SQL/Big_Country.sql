@@ -46,7 +46,7 @@
 -- | Algeria     | 37100000   | 2381741 |
 -- +-------------+------------+---------+
  
- SELECT name, population, area
+SELECT name, population, area
 FROM World w
 WHERE w.population >= 25000000
 OR w.area >= 3000000
