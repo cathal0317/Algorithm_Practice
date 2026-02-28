@@ -37,7 +37,7 @@ class Solution:
         if target >= pivot and target <= nums[r]:
             l = idx
         else:
-            r = pivot - 1
+            r = idx - 1
 
 
         while l <= r:
