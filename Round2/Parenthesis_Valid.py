@@ -17,7 +17,7 @@
 # Input: s = "([{}])"
 
 # Output: true
-
+for i in range(len(s)):
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
