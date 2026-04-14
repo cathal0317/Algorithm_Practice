@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jun 15 08:21:56 2023
-
-@author: herzallr
-"""
-
 # (a) Matrix Representation of the DFT:
 import numpy as np
 import matplotlib.pyplot as plt
@@ -25,7 +17,7 @@ def dft_matrix(N):
 # Create the DFT matrix for N=4
 N = 4
 W = dft_matrix(N)
-
+    
 # Define a simple sequence
 x = np.array([1, 2, 3, 4])
 
